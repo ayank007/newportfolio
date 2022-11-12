@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap');
+@import url('assets/fonts/Thunder-BoldLC\ 700.otf');
+@import url('assets/fonts/Pixeboy.ttf');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+    font-family: 'Signika', Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+* {
+    position: relative;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+.main-container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+.btn {
+    border-radius: 4px;
+    padding: 7px 25px;
+    outline: none;
+}
+.flex1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.px-base {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.center1 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
