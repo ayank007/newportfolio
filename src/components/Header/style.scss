@@ -1,0 +1,182 @@
+#Header{
+    height: calc(100vh - var(--navbarHeight));
+    min-height: 600px;
+    max-height: 1024px;
+    border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.2);
+
+    h1{
+        color: var(--themeOrange);
+        font-family: var(--thunder);
+        font-weight: 900;
+        font-size: 100px;
+        width: max-content;
+        
+        
+        &::before, &::after{
+            color: #9177AB;
+            font-size: 50px;
+            font-family: var(--signika);
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &::before{
+            left: -40px;
+            content: '<';
+        }
+        &::after{
+            right: -60px;
+            content: '/>';
+        }
+
+    }
+
+    .description {
+        font-size: 25px;
+        font-weight: 400;
+        color: rgba($color: #ffffff, $alpha: 0.8);
+        line-height: 190%;
+    }
+
+    .callToActionBtn{
+        // margin-left: -150px;
+        // margin-top: -10px;
+        width: max-content;
+        display: flex;
+        gap: 20px;
+        height: 67px;
+        // padding: 80px 150px;
+        font-size: 25px;
+        align-items: center;
+        color: var(--themeGreen);
+        cursor: pointer;
+        .icon{
+            pointer-events: none;
+            width: 32px;
+            height: 67px;
+            border-radius: 60px;
+            border: 3px solid #CECECE;
+            .ball{
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background-color: white;
+                position: absolute;
+                top: 0px;
+                left: 50%;
+                transform: translateX(-50%);
+                animation: animateBall 1.5s ease-in-out infinite alternate;
+            }
+        }
+    }
+
+    .tagLine{
+        font-size: 25px;
+        color: #8AB4F8;
+        font-family: var(--pixel);
+        top: 150px;
+        left: 75px;
+        z-index: 10;
+    }
+
+    .jsLogo{
+        position: absolute;
+        left: 10px;
+        bottom: 225px;
+    }
+    .fLogo{
+        position: absolute;
+        top: 10px;
+        left: 200px;
+    }
+    .gsapLogo{
+        left: 52%;
+        top: 240px;
+    }
+
+    .decoration1{
+        position: absolute;
+        transform: rotate(20deg);
+        top: -100px;
+        left: 0;
+        color: rgba($color: #ffffff, $alpha: 0.2);
+        font-size: 100px;
+        font-weight: 500;
+        font-size: 20px;
+    }
+    .decoration2{
+        position: absolute;
+        width: 54px;
+        height: 60px;
+        bottom: 50px;
+        left: 50px;
+        transform: rotate(20deg);
+    }
+    .decoration3{
+        position: absolute;
+        right: 0;
+        bottom: 100px;
+        width: 100px;
+    }
+    .decoration4{
+        position: absolute;
+        top: 65px;
+        right: 90px;
+        font-size: 50px;
+        color: rgba($color: #ffffff, $alpha: 0.2);
+    }
+    .decoration5{
+        position: absolute;
+        height: 35px;
+        width: 35px;
+        background-color: #0D6D8E;
+        border-radius: 50%;
+        bottom: -18px;
+        left: 400px;
+    }
+    .decoration6{
+        position: absolute;
+        top: 100px;
+        right: 40%;
+        width: 40px;
+        height: 90px;
+        border-radius: 45px;
+        transform: rotate(-35deg);
+        border: 3px solid rgba($color: #ffffff, $alpha: 0.2);
+    }
+    .decoration7{
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        background-color: #0D6D8E;
+        border-radius: 50%;
+        top: 150px;
+        right: 300px;
+    }
+    .decoration8{
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background-color: #FD7246;
+        border-radius: 50%;
+        top: 100px;
+        right: 150px;
+    }
+    .decoration9{
+        position: absolute;
+        right: 0;
+        top: 150px;
+        z-index: -10;
+        width: 150px;
+        height: auto;
+    }
+}
+@keyframes animateBall {
+    from{
+        transform: translateY(0) translateX(-50%);
+    }
+    to{
+        transform: translateY(calc(61px - 100%)) translateX(-50%);
+    }
+}

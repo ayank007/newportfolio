@@ -1,0 +1,29 @@
+#Navbar{
+    background-color: var(--theme);
+    z-index: 100;
+    height: var(--navbarHeight);
+}
+.logo{
+    color: #1DBD9C;
+    background-color: #16252D;
+}
+.logo .nav{
+    padding: 0 45px;
+}
+.border-light{
+    border-color: #3A474E;
+}
+.nav{
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 100%;
+}
+.contactBtn{
+    background-color: white;
+    color: var(--theme);
+    border-radius: 20px;
+    padding: 5px 24px;
+}

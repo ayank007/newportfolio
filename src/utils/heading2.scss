@@ -1,0 +1,20 @@
+.heading2{
+    h2{
+        font-size: 200px;
+        -webkit-text-stroke: 1px rgba($color: #ffffff, $alpha: 0.13);
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+        font-family: var(--thunder);
+    }
+    p {
+        text-transform: uppercase;
+        color: #1DBD9C;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        letter-spacing: 7px;
+    }
+}

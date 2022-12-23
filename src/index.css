@@ -1,42 +1,94 @@
-@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap');
-@import url('assets/fonts/Thunder-BoldLC\ 700.otf');
-@import url('assets/fonts/Pixeboy.ttf');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: 'thunder';
+    src: url('assets/fonts/Thunder-BoldLC.ttf');
+}
+@font-face {
+    font-family: 'pixel';
+    src: url('assets/fonts/Pixeboy.ttf');
+}
+@font-face {
+    font-family: 'signika';
+    src: url('assets/fonts/Signika-Bold.ttf');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'signika';
+    src: url('assets/fonts/Signika-Regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'signika';
+    src: url('assets/fonts/Signika-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'signika';
+    src: url('assets/fonts/Signika-Light.ttf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'signika';
+    src: url('assets/fonts/Signika-SemiBold.ttf');
+    font-weight: 600;
+}
 :root {
-    font-family: 'Signika', Inter, Avenir, Helvetica, Arial, sans-serif;
+    --theme: #091922;
+    --themeGreen: #1DBD9C;
+    --themeDark: #181818;
+    --themeOrange: #FD7246;
+    --themeLight: rgba(255, 255, 255, 0.65);
+    --thunder: 'thunder', Arial, Helvetica, sans-serif;
+    --pixel: 'pixel', Arial, Helvetica, sans-serif;
+    --signika: 'signika', 'Segoe UI', 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+    --navbarHeight: 80px;
+
+    font-family: var(--signika);
     font-size: 16px;
+    font-weight: 400;
+    /* color-scheme: light dark; */
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
 }
-* {
-    position: relative;
+*{
     box-sizing: border-box;
+    position: relative;
+    vertical-align: middle;
 }
-html {
+html{
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
-body {
+body{
+    padding: 0;
     margin: 0;
-    overflow-x: hidden;
+    min-height: 100vh;
+    background-color: var(--theme);
+    color: var(--themeLight);
 }
-.main-container {
+.mainContainer {
+    margin-left: auto;
+    margin-right: auto;
     max-width: 1600px;
-    margin: 0 auto;
 }
-.btn {
-    border-radius: 4px;
-    padding: 7px 25px;
-    outline: none;
+.px-base{
+    padding-left: 30px;
+    padding-right: 30px;
 }
-.flex1 {
+.thunder{
+    font-family: var(--thunder);
+}
+.pixel{
+    font-family: var(--pixel);
+}
+.flex1{
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.px-base {
-    padding-left: 40px;
-    padding-right: 40px;
 }
 .center1 {
     top: 50%;
