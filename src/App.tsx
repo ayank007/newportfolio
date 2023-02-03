@@ -1,6 +1,6 @@
-import { useRef } from "react"
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
-
+import { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect"
+import Scrollbar from 'smooth-scrollbar'
+import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll'
 
 import './App.css'
 import Header from './components/Header'
@@ -11,27 +11,36 @@ import About from "./components/About"
 import Footer from "./components/Footer"
 import Contact from "./components/Contact"
 
-const App = () => {
-    let scrollContainer = useRef(null)
+const overScrollOptions:any = {
+    enable: true,
+    effect: 'bounce',
+    damping: 0.15,
+    maxOverscroll: 150,
+}
+const options:any = {
+    damping: 0.1,
+    thumbMinSize: 20,
+    plugins: {
+        overscroll: {...overScrollOptions}
+    },
+}
 
-    const options = {
-        smooth: true,
-    }
+const App = () => {
+    
+    useIsomorphicLayoutEffect(()=>{
+        Scrollbar.use(OverscrollPlugin)
+        Scrollbar.init(document.body, options)
+    })
 
     return (
-        <LocomotiveScrollProvider 
-            options={options} 
-            containerRef={scrollContainer} 
-            onLocationChange={(scroll:any) => scroll.scrollTo(0, { duration: 0, disableLerp: true })}>
-            <main id="Main" data-scroll-container ref={scrollContainer}>
-                <Navbar />
-                <Header />
-                <Work />
-                <About />
-                <Contact />
-                <Footer />
-            </main>
-        </LocomotiveScrollProvider>
+        <>
+            <Navbar />
+            <Header />
+            <Work />
+            <About />
+            <Contact />
+            <Footer />
+        </>
     )
 }
 

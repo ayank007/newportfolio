@@ -10,16 +10,18 @@
   },
   "dependencies": {
     "gsap": "^3.11.3",
-    "locomotive-scroll": "^4.1.4",
+    "matter-js": "^0.18.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-locomotive-scroll": "^0.2.2",
     "react-router-dom": "^6.4.3",
+    "smooth-scrollbar": "^8.8.1",
+    "sparticles": "^1.3.1",
     "swiper": "^8.4.4",
     "TagCloud": "^2.2.0",
     "turn-js": "^0.5.4"
   },
   "devDependencies": {
+    "@types/matter-js": "^0.18.2",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",

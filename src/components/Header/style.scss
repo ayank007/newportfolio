@@ -1,6 +1,6 @@
 #Header{
     height: calc(100vh - var(--navbarHeight));
-    min-height: 600px;
+    min-height: 500px;
     max-height: 1024px;
     border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.2);
 
@@ -8,13 +8,14 @@
         color: var(--themeOrange);
         font-family: var(--thunder);
         font-weight: 900;
-        font-size: 100px;
+        font-size: var(--fh);
         width: max-content;
+        line-height: 1;
         
         
         &::before, &::after{
             color: #9177AB;
-            font-size: 50px;
+            font-size: calc(var(--fh) / 2);
             font-family: var(--signika);
             font-weight: 900;
             position: absolute;
@@ -33,25 +34,24 @@
     }
 
     .description {
-        font-size: 25px;
+        font-size: var(--flg);
         font-weight: 400;
         color: rgba($color: #ffffff, $alpha: 0.8);
         line-height: 190%;
+        margin-bottom: var(--px);
     }
 
     .callToActionBtn{
-        // margin-left: -150px;
-        // margin-top: -10px;
         width: max-content;
         display: flex;
         gap: 20px;
         height: 67px;
-        // padding: 80px 150px;
-        font-size: 25px;
+        font-size: var(--flg);
         align-items: center;
         color: var(--themeGreen);
         cursor: pointer;
         .icon{
+            zoom: 0.8;
             pointer-events: none;
             width: 32px;
             height: 67px;
@@ -72,104 +72,122 @@
     }
 
     .tagLine{
-        font-size: 25px;
+        font-size: var(--flg);
         color: #8AB4F8;
         font-family: var(--pixel);
-        top: 150px;
-        left: 75px;
+        top: 100px;
+        left: 55px;
         z-index: 10;
     }
 
     .jsLogo{
         position: absolute;
         left: 10px;
-        bottom: 225px;
+        width: 50px;
+        bottom: 155px;
     }
     .fLogo{
         position: absolute;
-        top: 10px;
-        left: 200px;
+        top: 0px;
+        left: 100px;
+        width: 40px;
     }
     .gsapLogo{
-        left: 52%;
-        top: 240px;
+        left: 0;
+        top: 150px;
+        zoom: 0.7;
+    }
+    .heroImg{
+        width: 450px;
     }
 
-    .decoration1{
-        position: absolute;
-        transform: rotate(20deg);
-        top: -100px;
-        left: 0;
-        color: rgba($color: #ffffff, $alpha: 0.2);
-        font-size: 100px;
-        font-weight: 500;
-        font-size: 20px;
-    }
-    .decoration2{
-        position: absolute;
-        width: 54px;
-        height: 60px;
-        bottom: 50px;
-        left: 50px;
-        transform: rotate(20deg);
-    }
-    .decoration3{
-        position: absolute;
-        right: 0;
-        bottom: 100px;
-        width: 100px;
-    }
-    .decoration4{
-        position: absolute;
-        top: 65px;
-        right: 90px;
-        font-size: 50px;
-        color: rgba($color: #ffffff, $alpha: 0.2);
-    }
-    .decoration5{
-        position: absolute;
-        height: 35px;
-        width: 35px;
-        background-color: #0D6D8E;
-        border-radius: 50%;
-        bottom: -18px;
-        left: 400px;
-    }
-    .decoration6{
-        position: absolute;
-        top: 100px;
-        right: 40%;
-        width: 40px;
-        height: 90px;
-        border-radius: 45px;
-        transform: rotate(-35deg);
-        border: 3px solid rgba($color: #ffffff, $alpha: 0.2);
-    }
-    .decoration7{
-        position: absolute;
-        height: 30px;
-        width: 30px;
-        background-color: #0D6D8E;
-        border-radius: 50%;
-        top: 150px;
-        right: 300px;
-    }
-    .decoration8{
-        position: absolute;
-        height: 20px;
-        width: 20px;
-        background-color: #FD7246;
-        border-radius: 50%;
-        top: 100px;
-        right: 150px;
-    }
-    .decoration9{
-        position: absolute;
-        right: 0;
-        top: 150px;
-        z-index: -10;
-        width: 150px;
-        height: auto;
+    .decoration{
+        &.decoration1{
+            // </> | inside texts
+            position: absolute;
+            transform: rotate(20deg);
+            top: -100px;
+            left: 0;
+            color: rgba($color: #ffffff, $alpha: 0.2);
+            font-size: 100px;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        &.decoration2{
+            // polygon | inside texts
+            position: absolute;
+            width: 44px;
+            height: 50px;
+            bottom: 50px;
+            left: 50px;
+            transform: rotate(20deg);
+        }
+        &.decoration3{
+            // pattern | inside texts
+            position: absolute;
+            right: 0;
+            bottom: 100px;
+            width: 100px;
+        }
+        &.decoration4{
+            // star | inside text
+            position: absolute;
+            top: -10px;
+            right: 90px;
+            font-size: 40px;
+            font-weight: 300;
+            color: rgba($color: #ffffff, $alpha: 0.2);
+        }
+        &.decoration5{
+            // blue ball at bottom
+            position: absolute;
+            height: 35px;
+            width: 35px;
+            background-color: #0D6D8E;
+            border-radius: 50%;
+            bottom: -18px;
+            left: 300px;
+        }
+        &.decoration6{
+            // cylinder
+            position: absolute;
+            top: 10px;
+            right: 40%;
+            width: 30px;
+            height: 70px;
+            border-radius: 45px;
+            transform: rotate(-35deg);
+            border: 2px solid rgba($color: #ffffff, $alpha: 0.2);
+        }
+        &.decoration7{
+            // blue ball at top right
+            position: absolute;
+            height: 25px;
+            width: 25px;
+            background-color: #0D6D8E;
+            border-radius: 50%;
+            top: 50px;
+            right: 200px;
+        }
+        &.decoration8{
+            // orange ball
+            position: absolute;
+            height: 15px;
+            width: 15px;
+            background-color: #FD7246;
+            border-radius: 50%;
+            top: 10px;
+            right: 100px;
+        }
+        &.decoration9{
+            // design middle right
+            position: absolute;
+            right: 0;
+            top: 100px;
+            z-index: -10;
+            width: 100px;
+            height: auto;
+        }
     }
 }
 @keyframes animateBall {

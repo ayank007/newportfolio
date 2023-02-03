@@ -1,0 +1,144 @@
+.projects{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    row-gap: 60px;
+    column-gap: 15px;
+}
+.projectBg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.project{
+    .view{    
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .texts{
+        padding: 10px 0;
+        h3{
+            font-family: var(--pixel);
+            font-size: 25px;
+        }
+        p{
+            text-transform: capitalize;
+            opacity: 0.6;
+            font-weight: 300;
+            font-size: 14px;
+        }
+        border-bottom: 1px solid;
+    }
+}
+.project1{
+    .view{
+        width: var(--wp1);
+        height: var(--hp1);
+        background-color: var(--project1);
+        color: var(--theme);
+    }
+    .texts{
+        border-color: var(--project1);
+    }
+}
+.project2{
+    .view{
+        width: var(--wp2);
+        height: var(--hp2);
+        background-color: var(--project2);
+    }
+    .texts{
+        border-color: var(--project2);
+    }
+}
+.project3{
+    .view{
+        width: var(--wp2);
+        height: var(--hp2);
+        background-color: var(--project3);
+    }
+    .texts{
+        border-color: var(--project3);
+    }
+}
+.project4{
+    .view{
+        width: var(--wp1);
+        height: var(--hp1);
+        background-color: var(--project4);
+    }
+    .texts{
+        border-color: var(--project4);
+    }
+}
+
+.warmHoleBtn {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    font-size: 100px;
+    background-color: var(--about);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+        width: 85px;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        pointer-events: none;
+    }
+    .warmHoleBtnText {
+        width: 101%;
+        height: 101%;
+        z-index: 2;
+        -webkit-clip-path: circle(0 at center);
+        clip-path: circle(0 at center);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 20px;
+        text-align: center;
+        border-radius: 50%;
+        line-height: 1;
+        background-color: var(--about);
+        color: var(--theme);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        transition: .4s;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p{
+            transition: 0.3s;
+            transition-delay: 0.4s;
+            font-weight: 700;
+        }
+    }
+
+    &:hover{
+        .warmHoleBtnText {
+            -webkit-clip-path: circle(90px at center);
+            clip-path: circle(90px at center);
+            p{
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+
+.swiper{
+    min-height: inherit;
+    cursor: pointer;
+}
+.swiper-wrapper, .swiper-slide{
+    min-height: inherit;
+}
+.swiper-slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
