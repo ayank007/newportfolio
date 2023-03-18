@@ -1,8 +1,9 @@
 import './boxCanvas.scss'
-
+import GridCanvas from './Canvas/GridCanvas'
 const BoxCanvas = (props:any) => {
     return (
         <div id="BoxCanvas" className={props.class1}>
+            {/* <GridCanvas height={400} width={320} /> */}
             <svg className='h-full top-0 absolute left-1/2 transform -translate-x-1/2' viewBox="0 0 88 167" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M40 73H31C14.4315 73 1 86.4315 1 103V167" stroke="white" strokeWidth="0.5"/>
                 <path d="M57 105H41C36.5817 105 33 108.582 33 113V167" stroke="white" strokeWidth="0.5"/>

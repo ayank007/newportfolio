@@ -12,6 +12,11 @@
         min-width: 550px;
         max-width: 100%;
     }
+    .submitContactBtn{
+        background-color: var(--themeGreen);
+        color: var(--theme);
+        font-weight: 600;
+    }
 }
 .stepText{
     cursor: pointer;
@@ -44,7 +49,7 @@
         transform: skew(60deg,-30deg) scaleY(.66667);
     }
     .sliding-text--second-screen .sliding-text__line {
-        font-size: 50px;
+        font-size: var(--f3xl);
         height: 45px;
         font-weight: 700;
         overflow: hidden;
@@ -53,8 +58,9 @@
         letter-spacing: 0px;
     }
     .sliding-text--second-screen .sliding-text__line span {
-        display: block;
+        display: flex;
         height: 50px;
+        align-items: center;
         line-height: 100%;
         transition: all .4s ease-in-out;
         transform: translateZ(0);
@@ -74,7 +80,15 @@
         transform: translate3d(0,-50px,0);
     }
 }
+#Contact{
+    .ending{
+        font-size: var(--flg);
+    }
+}
 form{
+    .heading{
+        font-size: var(--fxl);
+    }
     input, textarea{
         height: 45px;
         width: 300px;
@@ -82,7 +96,6 @@ form{
         padding-left: 15px;
         color: white;
         background: transparent;
-        border-bottom: 1px solid white;
         &::placeholder{
             opacity: 0.2;
         }
@@ -92,9 +105,12 @@ form{
         height: 100px;
         margin-top: 10px;
         width: 100%;
-        border: 1px solid white;
+        border: 1px solid #D1D4DA;
         border-radius: 4px;
         padding-top: 10px;
+    }
+    svg{
+        overflow: visible;
     }
     .inpBg{
         display: flex;

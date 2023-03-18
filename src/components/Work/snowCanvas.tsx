@@ -49,7 +49,7 @@ const SnowCanvas = (props:any) => {
         };
         
         const SnowCanvas = document.getElementById("SnowCanvas")
-        new Sparticles(SnowCanvas, options)
+        // new Sparticles(SnowCanvas, options)
     },[])
     return (
         <div id="SnowCanvas" className={props.class1}></div>

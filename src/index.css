@@ -52,17 +52,25 @@
     --signika: 'signika', 'Segoe UI', 'Inter', Tahoma, Geneva, Verdana, sans-serif;
     --navbarHeight: 64px;
     --px: 30px;
+    --f3xl: 50px;
     --f2xl: 30px;
     --fxl: 25px;
     --flg: 20px;
+    --fsm: 14px;
     --fm: 18px;
     --fh: 80px;
     --wp1: 400px;
     --hp1: 250px;
     --wp2: 300px;
     --hp2: 400px;
+    --heading2: 150px;
     --sh: calc(100vh - var(--navbarHeight));
-    --about: #9EB8B7;
+    /* --about: #9EB8B7; */
+    /* --about: #AECBC6; */
+    /* --about: #bffffd; */
+    /* --about: #ffffff; */
+    /* --about: #E5EAD6; */
+    --about: #eaffee;
 
     font-family: var(--signika);
     font-size: 16px;
@@ -85,12 +93,16 @@ html{
 body{
     padding: 0;
     margin: 0;
-    height: 100vh;
+    overflow-x: hidden;
     background: linear-gradient(to bottom, var(--theme) 0%, black 100%);
     color: var(--about);
 }
 section{
     background-color: var(--theme);
+    z-index: 1;
+}
+.no-cursor{
+    pointer-events: none;
 }
 .min-sh{
     min-height: var(--sh);
@@ -106,6 +118,12 @@ section{
 }
 .thunder{
     font-family: var(--thunder);
+}
+.text-themeGreen{
+    color: var(--themeGreen);
+}
+.bg-themeGreen{
+    background-color: var(--themeGreen);
 }
 .pixel{
     font-family: var(--pixel);

@@ -29,7 +29,7 @@ const RoundedText = (props:any) => {
             '--angle',
             newAngle
             )
-        }, 20)
+        }, 100)
     }
     const stopRotating = () => {
         clearInterval(interval)

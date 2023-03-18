@@ -1,14 +1,14 @@
 import './personal.scss'
 
-const Personal = () => {
+const Personal = ({data}:any) => {
     return (
         <div id="Personal">
             <div className="text">
                 <div className='pageNum'>03.</div>
                 <h3>
-                    About Me
+                    {data.title}
                 </h3>
-                <p>Fast | Hardworking | Disciplined, but beyond that...</p>
+                <p>{data.desc}</p>
             </div>
         </div>
     )

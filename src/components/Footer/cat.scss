@@ -100,12 +100,12 @@ $k-right-ear: (
   $total-kf: rotateZ(-16deg)
 );
 
-$tail-interval: (11 - 7.5) / $tail-wags;
+$tail-interval: calc((11 - 7.5) / $tail-wags);
 
 @mixin effect($name, $kf) {
   @keyframes #{$name} {
     @each $interval, $transform in $kf {
-      #{percentage($interval/$total-kf)} {
+      #{percentage(calc($interval/$total-kf))} {
         transform: $transform;
       }
     }

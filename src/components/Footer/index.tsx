@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 import './style.scss'
 
@@ -10,13 +10,15 @@ import './cat.scss'
 import football from '../../assets/footer/football.png'
 import ronaldo from '../../assets/footer/cr7.jpg'
 import messi from '../../assets/footer/messi.jpg'
+import { useIsomorphicLayoutEffect } from '../../useIsomorphicLayoutEffect'
 
-const Footer = () => {
+const Footer = ({data}:any) => {
     const deg = 6
     const hour:any = useRef()
     const min:any = useRef()
     const sec:any = useRef()
-    useEffect(()=>{        
+
+    useIsomorphicLayoutEffect(()=>{        
 
         const setClock = () => {
             let day = new Date()
@@ -27,9 +29,11 @@ const Footer = () => {
             // if (hour.current == null || min.current == null || sec.current == null) {
             //     return
             // }
-            hour.current.style.transform = `rotateZ(${hh + mm / 12}deg)`
-            min.current.style.transform = `rotateZ(${mm}deg)`
-            sec.current.style.transform = `rotateZ(${ss}deg)`
+            if (hour.current && min.current && sec.current) {
+                hour.current.style.transform = `rotateZ(${hh + mm / 12}deg)`
+                min.current.style.transform = `rotateZ(${mm}deg)`
+                sec.current.style.transform = `rotateZ(${ss}deg)`
+            }
         }
 
         // first time
@@ -38,6 +42,7 @@ const Footer = () => {
         setInterval(setClock, 1000)
 
     }, [])
+
     return (
         <footer id="Footer" data-scroll-section className="mainContainer px-base">
             <div id="Aquarium">
@@ -119,32 +124,32 @@ const Footer = () => {
                 </div>
             </div>
             <div className="desk-container">
-                
-            <div className="cat">
-                <div className="body"></div>
-                <div className="head">
-                    <div className="ear"></div>
-                    <div className="ear"></div>
-                </div>
-                <div className="face">
-                    <div className="nose"></div>
-                    <div className="whisker-container">
-                        <div className="whisker"></div>
-                        <div className="whisker"></div>
+                <div className="cat">
+                    <div className="body"></div>
+                    <div className="head">
+                        <div className="ear"></div>
+                        <div className="ear"></div>
                     </div>
-                    <div className="whisker-container">
-                        <div className="whisker"></div>
-                        <div className="whisker"></div>
+                    <div className="face">
+                        <div className="nose"></div>
+                        <div className="whisker-container">
+                            <div className="whisker"></div>
+                            <div className="whisker"></div>
+                        </div>
+                        <div className="whisker-container">
+                            <div className="whisker"></div>
+                            <div className="whisker"></div>
+                        </div>
                     </div>
-                </div>
-                <div className="tail-container">
-                    <div className="tail">
+                    <div className="tail-container">
                         <div className="tail">
                             <div className="tail">
                                 <div className="tail">
                                     <div className="tail">
                                         <div className="tail">
-                                            <div className="tail"></div>
+                                            <div className="tail">
+                                                <div className="tail"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -152,7 +157,6 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-            </div>
                 <div className="desk">
                     <div className="longer"></div>
                     <div className="slide">
@@ -172,7 +176,9 @@ const Footer = () => {
                     <div className="chair"></div>
                     <div className="chair-holder"></div>
                     <div className="imac">
-                        <div className="black-side"></div>
+                        <div className="black-side">
+                            <div className="goodbyeMsg">{data}</div>
+                        </div>
                         <div className="butt"></div>
                         <div className="holder"></div>
                         <div className="note"></div>
@@ -183,7 +189,22 @@ const Footer = () => {
                         <div className="handle"></div>
                         <div className="other-stuff"></div>
                     </div>
-                    <div className="cup"></div>
+                    <div className="cup">
+                        <div className="vapour">
+                            <span style={{"--v":1} as React.CSSProperties}></span>
+                            <span style={{"--v":2} as React.CSSProperties}></span>
+                            <span style={{"--v":5} as React.CSSProperties}></span>
+                            <span style={{"--v":4} as React.CSSProperties}></span>
+                            <span style={{"--v":6} as React.CSSProperties}></span>
+                            <span style={{"--v":19} as React.CSSProperties}></span>
+                            <span style={{"--v":7} as React.CSSProperties}></span>
+                            <span style={{"--v":8} as React.CSSProperties}></span>
+                            <span style={{"--v":9} as React.CSSProperties}></span>
+                            <span style={{"--v":10} as React.CSSProperties}></span>
+                            <span style={{"--v":11} as React.CSSProperties}></span>
+                            <span style={{"--v":18} as React.CSSProperties}></span>
+                        </div>
+                    </div>
                     <div className="board">
                         Today jobs
                         <ul>

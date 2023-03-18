@@ -1,0 +1,13 @@
+.cursorFollower{
+    width: 10px;
+    height: 10px;
+    background: var(--themeGreen);
+    position: fixed;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 10000;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    position: fixed;
+}

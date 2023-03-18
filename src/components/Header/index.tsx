@@ -14,8 +14,7 @@ import Decoration3 from '../../assets/hero/decoration3.svg'
 import Decoration9 from '../../assets/hero/decoration9.svg'
 import MagneticElement from '../../utils/magneticElement'
 
-const Header = () => {
-
+const Header = ({data}:any) => {
     return (
         <section id="Header" data-scroll-section className="overflow-hidden">
             <div className='mainContainer px-base h-full z-10 flex'>
@@ -60,27 +59,29 @@ const Header = () => {
                         <div className="decoration decoration1">
                             &#60;/&#62;
                         </div>
-                        <h1 data-scroll data-scroll-speed="3">Ayan Koley</h1>
+                        <h1 data-scroll data-scroll-speed="3">{data.name}</h1>
                     </div>
                     <p className='description' data-scroll data-scroll-speed="2">
-                    Hello 👋, welcome to my interactive resume. I’m a full-stack developer based in India. 
+                    {data.title} 
                     </p>
-                    <div data-scroll data-scroll-speed="1">
-                        <MagneticElement padding={true} velocity={100}>
-                            <div className='callToActionBtn'>
-                                <div className="icon">
-                                    <div className="ball"></div>
+                    <a href="#Work">
+                        <div data-scroll data-scroll-speed="1">
+                            <MagneticElement padding={true} velocity={100}>
+                                <div className='callToActionBtn pointer-events-none'>
+                                    <div className="icon">
+                                        <div className="ball"></div>
+                                    </div>
+                                    {data.action}
                                 </div>
-                                Know me more
-                            </div>
-                        </MagneticElement>
-                    </div>
+                            </MagneticElement>
+                        </div>
+                    </a>
                     <br /><br />
                 </div>
                 <div className="images w-1/2 flex justify-end pr-10 items-end">
                     <div className='heroImg'>
                         <div className="tagLine">
-                            <TypeWriter />
+                            <TypeWriter data={data.intro} />
                         </div>
                         <Hero />
                         <img src={JavaScriptLogo} alt="JavaScript Logo" className='jsLogo' />

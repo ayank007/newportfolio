@@ -20,7 +20,6 @@ const MagneticElement = (props:any) => {
 
     const className = props.padding ? 'paddedElement' : ''
     
-
     const magneticBg:any = useRef(null)
     const magneticElement:any = useRef(null)
     
@@ -47,7 +46,7 @@ const MagneticElement = (props:any) => {
     }, [])
 
     return (
-        <div className={'magneticBg ' + className} ref={magneticBg}>
+        <div className={'magneticBg Link ' + className} ref={magneticBg}>
             <div ref={magneticElement} className='magneticElement'>
                 {props.children}
             </div>

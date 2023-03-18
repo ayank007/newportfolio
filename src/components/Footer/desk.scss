@@ -341,9 +341,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        &::before{
+        .goodbyeMsg{
             content: 'Thank you for visiting, have a nice day';
-            font-size: 20px;
+            font-size: var(--flg);
             padding: 10px;
             font-weight: bold;
             color: black;
@@ -815,5 +815,42 @@
         to {
             -webkit-transform: rotate(360deg);
         }
+    }
+}
+.vapour {
+    position: relative;
+    display: flex;
+    z-index: 1;
+    justify-content: center;
+    span {
+        position: relative;
+        bottom: 0px;
+        display: block;
+        min-width: 3px;
+        height: 25px;
+        background: #fff;
+        border-radius: 50%;
+        animation: animate 5s linear infinite;
+        opacity: 0;
+        filter: blur(10px);
+        animation-delay: calc(var(--v) * -0.5s);
+    }
+}
+@keyframes animate {
+    0% {
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-150px) scaleX(5);
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-300px) scaleX(10);
     }
 }

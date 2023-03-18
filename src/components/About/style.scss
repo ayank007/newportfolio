@@ -2,11 +2,13 @@
     background-color: var(--about);
     .swiper{
         height: 100%;
+        cursor: default;
     }
     .swiper-wrapper{
         height: 100%;
     }
     .swiper-slide{
+        overflow: hidden;
         height: 100%;
         > div{
             height: 100%;
@@ -18,13 +20,14 @@
         }
     }
     .text{
+        position: absolute;
         padding-left: 100px;
         width: max-content;
         height: min-content;
         font-family: var(--thunder);
         color: var(--theme);
         h3{
-            font-size: 80px;
+            font-size: var(--fh);
             line-height: 0.9;
         }
         .pageNum{
@@ -32,10 +35,34 @@
             font-size: 50px;
         }
         p{
-            font-size: 20px;
+            font-size: var(--flg);
             font-family: var(--signika);
             font-weight: 500;
             text-transform: capitalize;
+        }
+    }
+    .arrows{
+        z-index: 10;
+        position: absolute;
+        right: 100px;
+        bottom: 40px;
+        display: flex;
+        gap: 15px;
+        > div{
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+            border-radius: 50%;
+            border: 1px solid rgba($color: #000000, $alpha: 0.6);
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+        .right{
+            background-color: var(--theme);
+            color: white;
+            border: none;
         }
     }
 }

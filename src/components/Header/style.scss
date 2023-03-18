@@ -1,9 +1,13 @@
 #Header{
     height: calc(100vh - var(--navbarHeight));
     min-height: 500px;
+    margin-top: var(--navbarHeight);
     max-height: 1024px;
     border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.2);
 
+    .Link > *{
+        pointer-events: none;
+    }
     h1{
         color: var(--themeOrange);
         font-family: var(--thunder);

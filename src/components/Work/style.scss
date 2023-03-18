@@ -1,3 +1,11 @@
+#Work {
+    .Link{
+        cursor: pointer;
+        > * {
+            pointer-events: none;
+        }
+    }
+}
 .projects{
     display: grid;
     grid-template-columns: auto auto;
@@ -19,7 +27,7 @@
         padding: 10px 0;
         h3{
             font-family: var(--pixel);
-            font-size: 25px;
+            font-size: var(--fxl);
         }
         p{
             text-transform: capitalize;
@@ -39,6 +47,7 @@
     }
     .texts{
         border-color: var(--project1);
+        width: var(--wp1);
     }
 }
 .project2{
@@ -49,6 +58,7 @@
     }
     .texts{
         border-color: var(--project2);
+        width: var(--wp2);
     }
 }
 .project3{
@@ -59,6 +69,7 @@
     }
     .texts{
         border-color: var(--project3);
+        width: var(--wp2);
     }
 }
 .project4{
@@ -69,10 +80,11 @@
     }
     .texts{
         border-color: var(--project4);
+        width: var(--wp1);
     }
 }
 
-.warmHoleBtn {
+.wormHoleBtn {
     width: 180px;
     height: 180px;
     border-radius: 50%;
@@ -83,13 +95,11 @@
     justify-content: center;
     svg {
         width: 85px;
-        -webkit-transform: rotate(135deg);
         transform: rotate(135deg);
-        -webkit-transform-origin: center center;
         transform-origin: center center;
         pointer-events: none;
     }
-    .warmHoleBtnText {
+    .wormHoleBtnText {
         width: 101%;
         height: 101%;
         z-index: 2;
@@ -120,7 +130,7 @@
     }
 
     &:hover{
-        .warmHoleBtnText {
+        .wormHoleBtnText {
             -webkit-clip-path: circle(90px at center);
             clip-path: circle(90px at center);
             p{
@@ -129,16 +139,13 @@
         }
     }
 }
-
-.swiper{
-    min-height: inherit;
-    cursor: pointer;
-}
-.swiper-wrapper, .swiper-slide{
-    min-height: inherit;
-}
-.swiper-slide{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.spreader{
+    width: 30px;
+    height: 30px;
+    background-color: var(--about);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
