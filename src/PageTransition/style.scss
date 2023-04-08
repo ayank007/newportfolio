@@ -1,0 +1,73 @@
+.transition1{
+    z-index: 10000000000;
+    .dot .dotInner{
+        background-color: var(--theme);
+    }
+    .page1, .page2, .page3{
+        width: 100vw;
+        position: fixed;
+        height: 100vh;
+        inset: 0;
+        transform: translateY(calc(100vh + 5px));
+        z-index: 300;
+    }
+    .page1{
+        background-color: #713EFD;
+        &.active{
+            transition: 0.6s;
+            transform: translateY(0);
+        }
+    }
+    .page3{
+        .row{
+            background-color: #AFE8FC;
+        }
+        display: flex;
+        flex-flow: column;
+        &.active{
+            transition: 0.4s;
+            transform: translateY(0);
+        }
+        &.active2{
+            .row{
+                transition: 0.6s;
+                transform: translateX(100%);
+            }
+            .row2{
+                transition-delay: 0.15s;
+            }
+            .row3{
+                transition-delay: 0.3s;
+            }
+            .row4{
+                transition-delay: 0.45s;
+            }
+            .row5{
+                transition-delay: 0.6s;
+            }
+        }
+        .row{
+            height: calc(100vh / 5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            font-size: 20px;
+        }
+    }
+    .pageTransitionTxt{
+        color: var(--theme);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        gap: 5px;
+    }
+    .loadingText {
+        font-size: 30px;
+        font-weight: 900;
+        padding-right: 0.8rem;
+        line-height: .7;
+        color: var(--theme);
+    }
+}

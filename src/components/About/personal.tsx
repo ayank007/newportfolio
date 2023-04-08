@@ -2,7 +2,7 @@ import './personal.scss'
 
 const Personal = ({data}:any) => {
     return (
-        <div id="Personal">
+        <div id="About">
             <div className="text">
                 <div className='pageNum'>03.</div>
                 <h3>

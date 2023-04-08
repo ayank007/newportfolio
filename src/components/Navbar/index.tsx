@@ -1,12 +1,13 @@
-import {useRef} from 'react'
+import {useEffect, useRef} from 'react'
 import MagneticElement from '../../utils/magneticElement'
 import './style.scss'
 import { NavpageToggler } from '../../context/openNavpage'
 import { LangToggler } from '../../context/language'
+import Link2 from '../../utils/CustomLinks/Link2'
 
 const Navbar = () => {
     const { lang, toggleLang }:any = LangToggler()
-    const { toggleNavpage }:any = NavpageToggler()
+    const { toggleNavpage, navpageStatus }:any = NavpageToggler()
 
     const langMenu:any = useRef()
     const toggleLangMenu = () => {
@@ -19,6 +20,12 @@ const Navbar = () => {
         menubar.current.classList.toggle('active')
     }
 
+    useEffect(()=>{
+        if (!navpageStatus) {
+            menubar.current.classList.remove('active')
+        }
+    },[navpageStatus])
+
     const onLangChange = (value:String) => {
         setTimeout(() => {
             langMenu.current.classList.remove('active')
@@ -30,13 +37,13 @@ const Navbar = () => {
         <div id="Navbar" data-scroll-sticky data-scroll-target="#Main" 
         className="top-0 left-0 border-b border-solid border-light flex justify-between w-full fixed">
             <div className="logo border-r border-solid border-light font-black">
-                <a href="#root" className='Link cursor-pointer'>
+                <Link2 to="#root" className='Link cursor-pointer'>
                     <MagneticElement velocity={80}>
                         <div className="nav pointer-events-none">
                             AYAN
                         </div>
                     </MagneticElement>
-                </a>
+                </Link2>
             </div>
             <div className="navs flex font-semibold">
                 <div className="border-l border-solid border-light">
@@ -132,7 +139,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="border-l border-solid border-light">
-                    <a href="#Contact">
+                    <Link2 to="#Contact">
                     <MagneticElement velocity={80}>
                         <div className="nav Link">
                             <div className="contactBtn pointer-events-none">
@@ -140,7 +147,7 @@ const Navbar = () => {
                             </div>
                         </div>
                     </MagneticElement>
-                    </a>
+                    </Link2>
                 </div>
             </div>
         </div>

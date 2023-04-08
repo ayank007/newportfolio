@@ -1,58 +1,69 @@
-import { useIsomorphicLayoutEffect } from "../../useIsomorphicLayoutEffect"
+import { useCallback } from "react"
+import Particles from "react-tsparticles"
+import { loadFull } from "tsparticles"
+import './snowCanvas.scss'
 
-const SnowCanvas = (props:any) => {
-    useIsomorphicLayoutEffect(()=>{
-        let colorType = {
-            type: "multi"
-        }
-        
-        let colors = {
-            color1: "rgba(255,255,255,1)",
-            color2: "rgba(233,239,250,1)",
-            color3: "rgba(222,241,250,1)",
-            color4: "rgba(178,209,219,1)",
-            color5: "rgba(135,143,145,1)"
-        }
-        
-        let options = {
-            alphaSpeed: 2,
-            alphaVariance: 1,
-            color: [colors.color1, colors.color2, colors.color3, colors.color4],
-            composition: "source-over",
-            count: 120,
-            direction: 160,
-            drift: 2,
-            glow: 50,
-            imageUrl: [
-                "https://assets.codepen.io/13471/snowflake.png",
-                "https://assets.codepen.io/13471/snowflake(1).png",
-                "https://assets.codepen.io/13471/snowflake(2).png",
-                "https://assets.codepen.io/13471/snowflake(3).png",
-                "https://assets.codepen.io/13471/snowflake(4).png",
-                "https://assets.codepen.io/13471/snowflake(5).png",
-                "https://assets.codepen.io/13471/snowflake(6).png",
-                "https://assets.codepen.io/13471/snowflake(7).png",
-                "https://assets.codepen.io/13471/snowflake(8).png",
-            ],
-            maxAlpha: 2,
-            maxSize: 24,
-            minAlpha: -0.2,
-            minSize: 3,
-            parallax: 6,
-            rotation: 0.5,
-            shape: ["image"],
-            speed: 2.5,
-            style: "fill",
-            twinkle: false,
-            xVariance: 20,
-            yVariance: 20,
-        };
-        
-        const SnowCanvas = document.getElementById("SnowCanvas")
-        // new Sparticles(SnowCanvas, options)
-    },[])
+const SnowCanvas = (props:any) => {    
+    const particlesInit = useCallback(async (engine:any) => {
+        await loadFull(engine)
+    }, [])
+
     return (
-        <div id="SnowCanvas" className={props.class1}></div>
+        <div 
+        className={props.class1}>
+            <Particles
+                width="300"
+                height="400"
+                style={{width: "300px", height: "400px"}}
+                id="SnowCanvas"
+                init={particlesInit}
+                options={{
+                    particles: {
+                        opacity: {
+                            value: {min: 0.3, max: 0.8},
+                        },
+                        color: {
+                            value: [
+                                "rgba(255,255,255,1)",
+                                "rgba(233,239,250,1)",
+                                "rgba(222,241,250,1)",
+                                "rgba(178,209,219,1)",
+                                "rgba(135,143,145,1)"
+                            ]
+                        },
+                        shape: {
+                            options: {
+                                images: [
+                                    {src: "https://assets.codepen.io/13471/snowflake.png"},
+                                    {src:"https://assets.codepen.io/13471/snowflake(1).png"},
+                                    {src:"https://assets.codepen.io/13471/snowflake(2).png"},
+                                    {src:"https://assets.codepen.io/13471/snowflake(3).png"},
+                                    {src:"https://assets.codepen.io/13471/snowflake(4).png"},
+                                    {src:"https://assets.codepen.io/13471/snowflake(5).png"},
+                                    {src:"https://assets.codepen.io/13471/snowflake(6).png"},
+                                    {src:"https://assets.codepen.io/13471/snowflake(7).png"},
+                                    {src:"https://assets.codepen.io/13471/snowflake(8).png"},
+                                ]
+                            },
+                            type: 'image',
+                        },
+                        size: {
+                            value: {min: 3, max: 10}
+                        },
+                        number: {
+                            value: 120
+                        },
+                        move: {
+                            direction: 'bottom-right',
+                            enable: true,
+                            speed: {min: 0.5, max: 3},
+                        }
+                    }
+                }}
+            />
+            {props.children}
+        </div>
+            
     )
 }
 

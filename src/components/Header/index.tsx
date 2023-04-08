@@ -1,6 +1,7 @@
 import './style.scss'
 import Hero from './hero'
 import TypeWriter from './typeWriter'
+import {HashLink} from 'react-router-hash-link'
 
 // images
 import Grid from '../../assets/hero/gridBg.png'
@@ -64,7 +65,7 @@ const Header = ({data}:any) => {
                     <p className='description' data-scroll data-scroll-speed="2">
                     {data.title} 
                     </p>
-                    <a href="#Work">
+                    <HashLink to={"#Work"}>
                         <div data-scroll data-scroll-speed="1">
                             <MagneticElement padding={true} velocity={100}>
                                 <div className='callToActionBtn pointer-events-none'>
@@ -75,7 +76,7 @@ const Header = ({data}:any) => {
                                 </div>
                             </MagneticElement>
                         </div>
-                    </a>
+                    </HashLink>
                     <br /><br />
                 </div>
                 <div className="images w-1/2 flex justify-end pr-10 items-end">

@@ -13,7 +13,7 @@
             width: 300px;
             &::before{
                 position: absolute;
-                content: '';
+                // content: '';
                 width: 5px;
                 border-radius: 3px;
                 left: -20px;
@@ -23,9 +23,42 @@
             }
         }
         li{
-            padding: 15px 0;
             font-size: 18px;
             font-weight: 400;
+            border-bottom: 1px solid rgb(65 78 85);
+            &::before{
+                content: '';
+                position: absolute;
+                width: 1000px;
+                height: 1px;
+                left: 0;
+                bottom: -1px;
+                background-color: rgb(65 78 85);
+            }
+            &:last-child{
+                border-bottom: 0;
+                &::before{
+                    display: none;
+                }
+            }
+            a{
+                transition: 0.3s;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                vertical-align: middle;
+                width: 300%;
+                transform: translateY(-100%);
+                opacity: 0;
+                > span{
+                    font-size: 40px;
+                    margin-top: 5px;
+                    font-family: var(--thunder);
+                    -webkit-text-stroke: 0.3px rgba(255, 255, 255, 0.2);
+                    letter-spacing: 1px;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
         }
     }
     .skills{
@@ -59,6 +92,14 @@
             transform: rotate(10deg);
             transition-delay: 0.4s;
         }
+        .menu{
+            li {
+                a{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
     }
     .imgWrapper{
         position: fixed;
@@ -71,5 +112,12 @@
         pointer-events: none;
         opacity: 0;
         z-index: 10;
+    }
+}
+
+$delay: 0.1s;
+@for $i from 0 through 5 {
+    #Navpage li:nth-child(#{$i + 1}) a {
+        transition-delay: 0.1 + $delay * $i;
     }
 }

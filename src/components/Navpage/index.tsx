@@ -7,6 +7,7 @@ import { TagCloud, TagCloudOptions } from "@frank-mayer/react-tag-cloud"
 import RollingText from '../../utils/RollingText'
 
 import { NavpageToggler } from '../../context/openNavpage'
+import Link2 from '../../utils/CustomLinks/Link2'
 
 function Navpage() {
     const { navpageStatus }:any = NavpageToggler()
@@ -52,11 +53,12 @@ function Navpage() {
             const mouseMove = ({x, y}:any) => {
                 let yOffset = itemBounds.top / imgWrapperBounds.height
                 yOffset = gsap.utils.mapRange(0, 1.5, -150, 150, yOffset)
-
+                
                 gsap.to(imgWrapper, {
                     duration: 1.25,
                     x: Math.abs(x - itemBounds.left) - imgWrapperBounds.width / 1.55,
-                    y: Math.abs(y - itemBounds.top) - imgWrapperBounds.height / 2 - yOffset,
+                    y: Math.abs(y - itemBounds.top) - 420 + yOffset / 1.1,
+                    // y: Math.abs(y - itemBounds.top) - imgWrapperBounds.height / 3 - yOffset,
                 })
             }
 
@@ -76,9 +78,10 @@ function Navpage() {
                                 <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
                             </div>
                         </div>
-                        <a href="#root">
+                        <Link2 to={'Home'}>
+                            <span>01.</span>
                             <RollingText title="Home" />
-                        </a>
+                        </Link2>
                     </li>
                     <li>
                         <div className='imgWrapper'>
@@ -86,9 +89,10 @@ function Navpage() {
                                 <img src="https://images.unsplash.com/photo-1610194352361-4c81a6a8967e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80" alt="" />
                             </div>
                         </div>
-                        <a href="#About">
+                        <Link2 to={'#SkillsAndExperience'}>
+                            <span>02.</span> 
                             <RollingText title="Skills &nbsp; &&nbsp;  Experience" />
-                        </a>
+                        </Link2>
                     </li>
                     <li>
                         <div className='imgWrapper'>
@@ -96,9 +100,10 @@ function Navpage() {
                                 <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
                             </div>
                         </div>
-                        <a href="#About">
+                        <Link2 to={"#About"}>
+                            <span>03.</span> 
                             <RollingText title="About&nbsp;  Me" />
-                        </a>
+                        </Link2>
                     </li>
                     <li>
                         <div className='imgWrapper'>
@@ -106,9 +111,10 @@ function Navpage() {
                                 <img src="https://images.unsplash.com/photo-1610194352361-4c81a6a8967e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80" alt="" />
                             </div>
                         </div>
-                        <a href="#About">
+                        <Link2 to={"#CV"}>
+                            <span>04.</span> 
                             <RollingText title="Download&nbsp;  CV" />
-                        </a>
+                        </Link2>
                     </li>
                     <li>
                         <div className='imgWrapper'>
@@ -116,9 +122,10 @@ function Navpage() {
                                 <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
                             </div>
                         </div>
-                        <a href="#Contact">
+                        <Link2 to={"#Contact"}>
+                            <span>05.</span> 
                             <RollingText title="Contact" />
-                        </a>
+                        </Link2>
                     </li>
                 </ul>
             </div>

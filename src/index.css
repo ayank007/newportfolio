@@ -89,6 +89,7 @@
 }
 html{
     scroll-behavior: smooth;
+    scroll-padding-top: var(--navbarHeight);
 }
 body{
     padding: 0;
@@ -96,6 +97,14 @@ body{
     overflow-x: hidden;
     background: linear-gradient(to bottom, var(--theme) 0%, black 100%);
     color: var(--about);
+}
+::-webkit-scrollbar {
+    background-color: var(--theme);
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--project3);
+    border-radius: 5px;
 }
 section{
     background-color: var(--theme);
@@ -125,6 +134,12 @@ section{
 .bg-themeGreen{
     background-color: var(--themeGreen);
 }
+.bg-about{
+    background-color: var(--about);
+}
+.text-theme{
+    color: var(--theme);
+}
 .pixel{
     font-family: var(--pixel);
 }
@@ -137,4 +152,15 @@ section{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.skeleton{
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+@keyframes skeleton-loading {
+    0%{
+        background-color: hsl(200, 20%, 95%);
+    }
+    100%{
+        background-color: hsl(206, 61%, 72%);
+    }
 }

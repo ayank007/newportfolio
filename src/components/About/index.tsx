@@ -1,23 +1,19 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper'
 import 'swiper/css'
-import {useRef} from 'react'
 
 import './style.scss'
 import Skills from './skills'
 import CV from './cv'
 import Personal from './personal'
 
+import { ASUser } from '../../context/aboutSwiper'
+
 const About = (props:any) => {
-    const prevRef:any = useRef()
-    const nextRef:any = useRef()
-
-    const skills = props.skills
-    const cv = props.cv
-    const about = props.about
-
+    const {ASRef}:any = ASUser()
     return (
-        <section id="About" data-scroll-section className='min-sh h-screen text-black'>
+        <section id="About" ref={ASRef}
+        className='min-sh h-screen text-black'>
             <Swiper
                 slidesPerView={1}
                 onSlideChange={(e) => console.log('slide change', e.snapIndex)}
@@ -38,11 +34,11 @@ const About = (props:any) => {
                 <SwiperSlide>
                     <Personal data={props.about} />
                 </SwiperSlide>
-                <div className="arrows">
-                    <div className="left" ref={prevRef}><i className="fa-solid fa-arrow-left-long"></i></div>
-                    <div className="right" ref={nextRef}><i className="fa-solid fa-arrow-right-long"></i></div>
-                </div>
             </Swiper>
+            <div className="arrows">
+                <div className="left"><i className="fa-solid fa-arrow-left-long"></i></div>
+                <div className="right"><i className="fa-solid fa-arrow-right-long"></i></div>
+            </div>
         </section>
     )
 }
