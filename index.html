@@ -2,18 +2,243 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/newportfolio/vite.svg" />
+        <link rel="icon" type="image/svg+xml" href="./vite.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Ayan Koley</title>
         
         <link rel="preconnect" href="https://cdnjs.cloudflare.com/">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://cdn.jsdelivr.net/npm/sparticles@1.3.0/dist/sparticles.js"></script>
-      <script type="module" crossorigin src="/newportfolio/assets/index.74fb7b04.js"></script>
-      <link rel="stylesheet" href="/newportfolio/assets/index.65169db4.css">
+
+        <style>
+            html{
+                background-color: #091922;
+            }
+            /* style for loader */
+            .MAINLOADER {
+                z-index: 1000000000;
+                position: fixed;
+                inset: 0;
+                height: 100vh;
+                width: 100vw;
+                background-color: var(--theme);
+                display: flex;
+                overflow: hidden;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                pointer-events: none;
+                transition: 0.6s;
+            }
+            .MAINLOADER.active {
+                opacity: 1;
+                pointer-events: auto;
+                transition: 1s;
+            }
+            .MAINLOADER .images {
+                opacity: 0;
+                position: absolute;
+                width: -moz-max-content;
+                width: max-content;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0.1);
+                transition: transform 0.6s, opacity 1.3s;
+            }
+            .MAINLOADER .images.active{
+                transform: translate(-50%, -50%) scale(0.4);
+            }
+            .MAINLOADER .images.active .rows{
+                opacity: 1;
+            }
+            .MAINLOADER .images.active2 {
+                opacity: 0.2;
+                transform: translate(-50%, -50%) scale(0.7);
+            }
+            .MAINLOADER .images.active2 img {
+                transform: translate(0px, 0px) !important;
+            }
+            .MAINLOADER .images.active3 {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            .MAINLOADER .images.active3 .row{
+                transform: translate(0px, 0px) !important;
+            }
+            .MAINLOADER .images img {
+                height: 25vh;
+                padding: 1.1vh 1.3vh;
+                overflow-clip-margin: content-box;
+                overflow: clip;
+                transition: 0.6s;
+            }
+            .MAINLOADER .images 
+                .rows {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+            }
+            .MAINLOADER .images .rows
+                .row {
+                    display: flex;
+                    flex-shrink: 0;
+                    transition: 0.6s;
+            }
+            .MAINLOADER .images .rows .row.row1 {
+                transform: translateY(200%);
+            }
+            .MAINLOADER .images .rows .row.row2 {
+                transform: translateY(100%);
+            }
+            .MAINLOADER .images .rows .row.row4 {
+                transform: translateY(-100%);
+            }
+            .MAINLOADER .images .rows .row.row5 {
+                transform: translateY(-200%);
+            }
+            .MAINLOADER .images .col.col1 {
+                transform: translateX(200%);
+            }
+            .MAINLOADER .images .col.col2 {
+                transform: translateX(100%);
+            }
+            .MAINLOADER .images .col.col4 {
+                transform: translateX(-100%);
+            }
+            .MAINLOADER .images .col.col5 {
+                transform: translateX(-200%);
+            }
+            .loadingText {
+                font-size: 35px;
+                font-weight: 900;
+                padding-right: 0.8rem;
+                line-height: 0.7;
+                color: white;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            .dot {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 0.5rem;
+                height: 0.5rem;
+                animation: dot 1.2s ease-in-out infinite;
+            }
+            .dot .dotInner {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background-color: white;
+                animation: dotInner 1.2s linear infinite;
+                transform-origin: bottom;
+            }
+            @keyframes dot {
+                50% {
+                    bottom: 80%;
+                }
+                100% {
+                    bottom: 0;
+                }
+            }
+            @keyframes dotInner {
+                0% {
+                    transform: scaleY(0.4);
+                }
+                25%,75% {
+                    transform: scaleY(1);
+                }
+                100% {
+                    transform: scaleY(0.4);
+                }
+            }
+        </style>
+      <script type="module" crossorigin src="./assets/index.28bf710f.js"></script>
+      <link rel="stylesheet" href="./assets/index.03ebb14c.css">
     </head>
     <body>
         <div id="root"></div>
+        
+        <div class="MAINLOADER">
+            <div class="loadingText">
+                <p>WELCOME</p>
+                <div class="dot">
+                    <div class="dotInner"></div>
+                </div>
+            </div>
+            <div class="images">
+                <div class="rows">
+                    <div class="row row1">
+                        <img class="col col1" src="./welcome.png" alt="welcome">
+                        <img class="col col2" src="./welcome.png" alt="welcome">
+                        <img class="col col3" src="./welcome.png" alt="welcome">
+                        <img class="col col4" src="./welcome.png" alt="welcome">
+                        <img class="col col5" src="./welcome.png" alt="welcome">
+                    </div>
+                    <div class="row row2">
+                        <img class="col col1" src="./welcome.png" alt="welcome">
+                        <img class="col col2" src="./welcome.png" alt="welcome">
+                        <img class="col col3" src="./welcome.png" alt="welcome">
+                        <img class="col col4" src="./welcome.png" alt="welcome">
+                        <img class="col col5" src="./welcome.png" alt="welcome">
+                    </div>
+                    <div class="row row3">
+                        <img class="col col1" src="./welcome.png" alt="welcome">
+                        <img class="col col2" src="./welcome.png" alt="welcome">
+                        <img class="col col3" src="./welcome.png" alt="welcome">
+                        <img class="col col4" src="./welcome.png" alt="welcome">
+                        <img class="col col5" src="./welcome.png" alt="welcome">
+                    </div>
+                    <div class="row row4">
+                        <img class="col col1" src="./welcome.png" alt="welcome">
+                        <img class="col col2" src="./welcome.png" alt="welcome">
+                        <img class="col col3" src="./welcome.png" alt="welcome">
+                        <img class="col col4" src="./welcome.png" alt="welcome">
+                        <img class="col col5" src="./welcome.png" alt="welcome">
+                    </div>
+                    <div class="row row5">
+                        <img class="col col1" src="./welcome.png" alt="welcome">
+                        <img class="col col2" src="./welcome.png" alt="welcome">
+                        <img class="col col3" src="./welcome.png" alt="welcome">
+                        <img class="col col4" src="./welcome.png" alt="welcome">
+                        <img class="col col5" src="./welcome.png" alt="welcome">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            let loadingFlag = 0
+            const LOADER = document.querySelector('.MAINLOADER')
+            const LOADERANIM = () => {
+                LOADER.classList.add('active')
+                LOADER.querySelector('.images').classList.add('active')
+                setTimeout(()=>{
+                    LOADER.querySelector('.images').classList.add('active2')
+                },600)
+                setTimeout(()=>{
+                    LOADER.querySelector('.images').classList.add('active3')
+                },1300)
+                setTimeout(()=>{
+                    loadingFlag = 1
+                    if (document.readyState === 'complete') {
+                        LOADER.classList.remove('active')
+                        setTimeout(()=>{
+                            LOADER.querySelector('.images').classList.remove('active3')
+                            LOADER.querySelector('.images').classList.remove('active2')
+                            LOADER.querySelector('.images').classList.remove('active')
+                        },300)
+                    }
+                },2200)
+            }
+            LOADERANIM()
+            window.addEventListener('load', ()=>{
+                if (loadingFlag == 1) {
+                    LOADER.classList.remove('active')
+                    setTimeout(()=>{
+                        LOADER.querySelector('.images').classList.remove('active3')
+                        LOADER.querySelector('.images').classList.remove('active2')
+                        LOADER.querySelector('.images').classList.remove('active')
+                    },300)
+                }
+            })
+        </script>
         
     </body>
 </html>
