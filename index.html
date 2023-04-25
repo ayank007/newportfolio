@@ -2,16 +2,47 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+        <link rel="icon" type="image/svg+xml" href="./logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Ayan Koley</title>
         
+        <meta name="theme-color" content="#091922" />
+        <meta
+        name="description"
+        content="Ayan Koley Professional Portfolio | A Work Defining The Attitude, Skills and Experience of Author Ayan Koley."
+        />
+        <meta name="keywords" content="Ayan Koley, Designer, Developer, Engineer, Ayan, Koley, HTML, CSS, JavaScript, React, Frontend">
+        <meta name="author" content="Ayan Koley">
+        <meta name="robots" content="index, follow">
+        <meta property="og:type" content="Portfolio" />
+        <meta property="og:url" content="https://ayankoley.com" />
+        <meta property="og:title" content="Ayan Koley" />
+        <meta property="og:description" content="Ayan Koley Professional Portfolio." />
+        <meta property="og:site_name" content="Ayan Koley" />
+        <meta property="og:image" content="./projects/portfolio.png" />
+        <meta name="twitter:site" content="@AYANKOLEY007">
+        <meta name="twitter:creator" content="@AYANKOLEY007">
+        <meta name="twitter:image" content="./projects/portfolio.png">
+        <meta name="twitter:title" content="Ayan Koley">
+        <meta name="twitter:description" content="Ayan Koley Professional Portfolio | A Work Defining The Attitude, Skills and Experience of Author Ayan Koley.">
+        <link rel="apple-touch-icon" href="./logo.png" />
+
         <link rel="preconnect" href="https://cdnjs.cloudflare.com/">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <style>
             html{
                 background-color: #091922;
+            }
+            html, body {
+                overflow: hidden;
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+            *{
+                position: relative;
+                box-sizing: border-box;
             }
             /* style for loader */
             .MAINLOADER {
@@ -20,7 +51,7 @@
                 inset: 0;
                 height: 100vh;
                 width: 100vw;
-                background-color: var(--theme);
+                background-color: #091922;
                 display: flex;
                 overflow: hidden;
                 align-items: center;
@@ -112,7 +143,7 @@
                 padding-right: 0.8rem;
                 line-height: 0.7;
                 color: white;
-                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-family: system-ui, sans-serif;
             }
             .dot {
                 position: absolute;
@@ -150,8 +181,8 @@
                 }
             }
         </style>
-      <script type="module" crossorigin src="./assets/index.28bf710f.js"></script>
-      <link rel="stylesheet" href="./assets/index.03ebb14c.css">
+      <script type="module" crossorigin src="./assets/index.040cbb47.js"></script>
+      <link rel="stylesheet" href="./assets/index.417c124a.css">
     </head>
     <body>
         <div id="root"></div>
@@ -219,6 +250,8 @@
                     loadingFlag = 1
                     if (document.readyState === 'complete') {
                         LOADER.classList.remove('active')
+                        // document.querySelector('body').style.overflow = 'auto'
+                        document.querySelector('html').style.overflow = 'auto'
                         setTimeout(()=>{
                             LOADER.querySelector('.images').classList.remove('active3')
                             LOADER.querySelector('.images').classList.remove('active2')
@@ -230,6 +263,8 @@
             LOADERANIM()
             window.addEventListener('load', ()=>{
                 if (loadingFlag == 1) {
+                    // document.querySelector('body').style.overflow = 'auto'
+                    document.querySelector('html').style.overflow = 'auto'
                     LOADER.classList.remove('active')
                     setTimeout(()=>{
                         LOADER.querySelector('.images').classList.remove('active3')
