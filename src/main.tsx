@@ -7,6 +7,10 @@ import { LangCtxProvider } from "./context/language"
 
 import Cursor from './utils/cursor'
 
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
+
 setTimeout(() => {
   ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>

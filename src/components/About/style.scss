@@ -26,6 +26,7 @@
         height: min-content;
         font-family: var(--thunder);
         color: var(--theme);
+        pointer-events: none;
         h3{
             font-size: var(--fh);
             line-height: 0.9;

@@ -46,20 +46,21 @@ const Link2 = (props:any) => {
     const handleClick2 = () => {
         if (navpageStatus) {
             toggleNavpage()
+            const swiperInstance:any = document.querySelector('#About')?.children[0]
             if (props.to.toLowerCase().includes('about')) {
                 console.log('going to about me');
                 
-                document.querySelector('#About')?.children[0].swiper.slideTo(3)
+                swiperInstance.swiper.slideTo(3)
             }
             else if (props.to.toLowerCase().includes('cv')) {
                 console.log('going to cv');
                 
-                document.querySelector('#About')?.children[0].swiper.slideTo(2)
+                swiperInstance.swiper.slideTo(2)
             }
             else if (props.to.toLowerCase().includes('skills')) {
                 console.log('going to skills');
                 
-                document.querySelector('#About')?.children[0].swiper.slideTo(1)
+                swiperInstance.swiper.slideTo(1)
             }
         }
     }

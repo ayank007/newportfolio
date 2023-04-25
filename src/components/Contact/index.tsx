@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import React, { useRef } from "react"
 import { useIsomorphicLayoutEffect } from "../../useIsomorphicLayoutEffect"
 import Heading2 from "../../utils/heading2"
 import gsap from "gsap"
@@ -40,9 +40,44 @@ const Contact = ({data}:any) => {
         }
     },[])
 
-    const reasonChange = (e:Event) => {
-        console.log(e.target);
+    const submitContact = async (e:React.FormEvent<HTMLFormElement>) => {
+        const form = e.target as HTMLFormElement
+        const submitBtn = form.querySelector('[type=submit]') as HTMLElement
+        submitBtn?.classList.add('no-cursor1')
+        submitBtn.innerText = 'Submitting!!'
+        e.preventDefault()
         
+        const nameInp = form.querySelector('[name=name]') as HTMLInputElement
+        const contactInp = form.querySelector('[name=contact]') as HTMLInputElement
+        const reasonInps = form.querySelectorAll('[name="reasonForContact"]:checked') as NodeListOf<HTMLInputElement>
+        const msgInp = form.querySelector('[name=message]') as HTMLTextAreaElement
+
+        const reasonInpValues = []
+        for (var i = 0; i < reasonInps.length; i++) {
+            reasonInpValues.push(reasonInps[i].value)
+        }
+
+        const res = await fetch('https://ayankoley-bb6cc-default-rtdb.europe-west1.firebasedatabase.app/contactUs.json', {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify({
+                name: nameInp.value,
+                contact: contactInp.value,
+                reason: reasonInpValues.join(', ').toString(),
+                message: msgInp.value,
+            })
+        })
+
+        if (res) {
+            alert("Your submission is successfully stored")
+        } else {
+            alert("There is some problem saving the data, please continue after some time.")
+        }
+
+        submitBtn?.classList.remove('no-cursor1')
+        submitBtn.innerText = 'Submit'
     }
 
     return (
@@ -54,7 +89,6 @@ const Contact = ({data}:any) => {
                 <div className="left flex items-center pb-40">
                     <div className="stepText" style={{visibility: "inherit", opacity: 1, transform: "matrix(1, 0, 0, 1, 0, 0)"}}>
                         <div className="sliding-text second-screen__sliding-text sliding-text--second-screen second-screen__sliding-text--second active">
-                            
                             <div className="sliding-text__line">
                                 <span>&nbsp;</span>
                                 <span>
@@ -75,7 +109,7 @@ const Contact = ({data}:any) => {
                     </div>
                 </div>
                 <div className="right">
-                    <form action="" autoComplete="off" ref={form}>
+                    <form autoComplete="off" ref={form} onSubmit={submitContact}>
                         <h2 className="font-bold heading">
                             {data.heading}
                         </h2>
@@ -83,14 +117,14 @@ const Contact = ({data}:any) => {
                         <div className="inpBg">
                             <label className="inpBox">
                                 <p>{data.name}</p>
-                                <input type="text" name="name" placeholder="John Doe" />
+                                <input type="text" required name="name" placeholder="John Doe" />
                                 <svg className="line-svg" width="300" height="2" viewBox="0 0 300 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path className="elastic-line" d="M0 0.999512C0 0.999512 60.5 0.999512 150 0.999512C239.5 0.999512 300 0.999512 300 0.999512" stroke="#D1D4DA" strokeWidth="1"/>
                                 </svg>
                             </label>
                             <label className="inpBox">
                                 <p>{data.contact}</p>
-                                <input type="text" name="contact" placeholder="john.doe@gmail.com" />
+                                <input type="text" required name="contact" placeholder="john.doe@gmail.com" />
                                 <svg className="line-svg" width="300" height="2" viewBox="0 0 300 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path className="elastic-line" d="M0 0.999512C0 0.999512 60.5 0.999512 150 0.999512C239.5 0.999512 300 0.999512 300 0.999512" stroke="#D1D4DA" strokeWidth="1"/>
                                 </svg>
@@ -102,7 +136,7 @@ const Contact = ({data}:any) => {
                                 return (
                                     <div key={key}>
                                         <label>
-                                            <input className="inp-cbx" value={option} type="checkbox" />
+                                            <input className="inp-cbx" name="reasonForContact" value={option} type="checkbox" />
                                             <div className="cbx">
                                                 <span>
                                                     <svg width="12px" height="10px">
@@ -123,7 +157,7 @@ const Contact = ({data}:any) => {
                         </div>
                         <label>
                             <p>{data.desc}</p>
-                            <textarea name="message" placeholder="Hi, how are you?"></textarea>
+                            <textarea name="message" required placeholder="Hi, how are you?"></textarea>
                         </label>
                         <br /><br />
                         <button className="submit px-10 py-2 rounded Link submitContactBtn" type="submit">

@@ -75,7 +75,7 @@ function Navpage() {
                     <li>
                         <div className='imgWrapper'>
                             <div className="imgBg">
-                                <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
+                                <img src="/projects/portfolio.png" alt="" />
                             </div>
                         </div>
                         <Link2 to={'Home'}>
@@ -86,7 +86,7 @@ function Navpage() {
                     <li>
                         <div className='imgWrapper'>
                             <div className="imgBg">
-                                <img src="https://images.unsplash.com/photo-1610194352361-4c81a6a8967e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80" alt="" />
+                                <img src="./skillsandexperience.png" alt="" />
                             </div>
                         </div>
                         <Link2 to={'#SkillsAndExperience'}>
@@ -97,7 +97,7 @@ function Navpage() {
                     <li>
                         <div className='imgWrapper'>
                             <div className="imgBg">
-                                <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
+                                <img src="./about.png" alt="" />
                             </div>
                         </div>
                         <Link2 to={"#About"}>
@@ -108,7 +108,7 @@ function Navpage() {
                     <li>
                         <div className='imgWrapper'>
                             <div className="imgBg">
-                                <img src="https://images.unsplash.com/photo-1610194352361-4c81a6a8967e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80" alt="" />
+                                <img src="./cv.png" alt="" />
                             </div>
                         </div>
                         <Link2 to={"#CV"}>
@@ -119,7 +119,7 @@ function Navpage() {
                     <li>
                         <div className='imgWrapper'>
                             <div className="imgBg">
-                                <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
+                                <img src="./contact.png" alt="" />
                             </div>
                         </div>
                         <Link2 to={"#Contact"}>

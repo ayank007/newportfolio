@@ -5,13 +5,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 5174",
     "build": "tsc && vite build",
     "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
     "@frank-mayer/react-tag-cloud": "^1.1.1",
+    "firebase": "^9.20.0",
     "gsap": "^3.11.3",
     "matter-js": "^0.18.0",
     "react": "^18.2.0",
@@ -29,6 +30,7 @@
     "@types/matter-js": "^0.18.2",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
+    "@types/react-router-hash-link": "^2.4.6",
     "@vitejs/plugin-react": "^2.2.0",
     "autoprefixer": "^10.4.13",
     "gh-pages": "^5.0.0",
