@@ -45,7 +45,11 @@ const Personal = ({data}:any) => {
                 </div>
                 <div className="page cover-front" onClick={(e)=>movePage(e.target, 2)}></div>
                 <div className="page text-page" onClick={(e)=>movePage(e.target, 3)}>
-                    page 3
+                    <div>
+                        <img src="./ayan.jpg" alt="Ayan Koley" className='skeleton mx-auto rounded' loading='lazy' width={240} />
+                        <span className='absolute bottom-2 right-6 text-xs font-medium'>@ Lachen, Sikkim</span>
+                    </div>
+                    <div className='pageNum'>Page 1</div>
                 </div>
                 <div className="page text-page" onClick={(e)=>movePage(e.target, 4)}>
                     <p>
@@ -180,7 +184,6 @@ const Personal = ({data}:any) => {
                                     c86.31-47.42,155.03-3.67,172.27-78.99C247.5,59.55,219.5-17.95,123.63,4.78z;
                                     M123.63,4.78C41.5,14.05,29.65-14.91,13.02,15.7C-7,52.55-6.32,204.81,63.69,188.97
                                     c74.81-16.92,143.01-7.48,172.27-78.99C252.5,69.55,212.5-8.45,123.63,4.78z;
-                                                                
                                     M123.63,4.78C58.88,12.27,34.28-11.9,13.02,15.7C-4.75,38.48-14.32,153.77,63.69,188.97
                                     c68.24,30.8,138.63-9.43,172.27-78.99C255.75,69.05,193.75-5.76,123.63,4.78z;">
                                 </animate>

@@ -34,26 +34,26 @@ const Work = ({data}:any) => {
         if (!wormHoleRef.current) {
             wormHoleRef.current = true
             // const WorkCtx = gsap.context(()=>{
-                let wormHoleTL = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: '.spreader',
-                        start: 'top center',
-                        end: 'top top',
-                        // markers: true,
-                        pin: '.spreaderBg',
-                        scrub: 1,
-                        toggleActions: 'play pause reverse pause',
-                    }
-                })
-                wormHoleTL.from('.spreader', {
-                    scale:1,
-                    ease: 'linear',
-                    duration: 0,
-                }).to('.spreader', {
-                    scale: 80,
-                    ease: 'linear',
-                    duration: 2,
-                })
+                // let wormHoleTL = gsap.timeline({
+                //     scrollTrigger: {
+                //         trigger: '.spreader',
+                //         start: 'top center',
+                //         end: 'top top',
+                //         // markers: true,
+                //         pin: '.spreaderBg',
+                //         scrub: 1,
+                //         toggleActions: 'play pause reverse pause',
+                //     }
+                // })
+                // wormHoleTL.from('.spreader', {
+                //     scale:1,
+                //     ease: 'linear',
+                //     duration: 0,
+                // }).to('.spreader', {
+                //     scale: 80,
+                //     ease: 'linear',
+                //     duration: 2,
+                // })
 
                 let proxy = { skew: 0 },
                 skewSetter = gsap.quickSetter(".projectBg", "skewY", "deg"), // fast
@@ -214,7 +214,8 @@ const Work = ({data}:any) => {
 
             <br /><br />
             <br /><br />
-            <Heading2 title={data.ending}>{data.ending2}</Heading2>
+            <br /><br />
+            {/* <Heading2 title={data.ending}>{data.ending2}</Heading2>
             <br /><br />
             <br /><br />
             <div className="flex1 spreaderBg">
@@ -229,7 +230,7 @@ const Work = ({data}:any) => {
                 </div>
                 </HashLink>
             </div>
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> */}
         </section>
     )
 }
